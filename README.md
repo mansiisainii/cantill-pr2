@@ -2,7 +2,7 @@
 
 > **One-command launch:** `docker compose up` or `npm start`
 > 
-> Web App URL: [**http://localhost:4000**](https://cantill-pr2-1.onrender.com)
+> Web App URL: https://cantill-pr2-1.onrender.com
 
 Cantill is a policy-driven procurement web application built for Corvo Engineering. It converts employee Purchase Requests (PRs), submitted via a conversational chat interface or uploaded in batches, into Purchase Orders (POs) or Sourcing Requests (RFQ/RFP). 
 
