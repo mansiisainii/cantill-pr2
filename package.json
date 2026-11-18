@@ -1,5 +1,12 @@
 {
-  "dependencies": {
-    "pdf-parse": "^1.1.4"
+  "name": "cantill-pr2",
+  "version": "1.0.0",
+  "description": "Corvo Engineering PR-to-PO Autonomous Procurement Engine",
+  "scripts": {
+    "start": "node server/server.js",
+    "dev:server": "npm --prefix server run dev",
+    "dev:client": "npm --prefix client run dev",
+    "build": "npm --prefix client run build",
+    "test": "npm --prefix server test"
   }
 }

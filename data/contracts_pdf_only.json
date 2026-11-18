@@ -1,0 +1,29 @@
+[
+  {
+    "contract_id": "RC-2026-031",
+    "supplier_id": "S021",
+    "start_date": "2026-11-15",
+    "end_date": "2027-11-14",
+    "value_cap": 2000000,
+    "consumed_value": 0,
+    "source": "pdf",
+    "lines": [
+      { "item_code": "ITM-1036", "rate": 3537.76 },
+      { "item_code": "ITM-1037", "rate": 2439.01 },
+      { "item_code": "ITM-1039", "rate": 2746.87 }
+    ]
+  },
+  {
+    "contract_id": "RC-2026-033",
+    "supplier_id": "S035",
+    "start_date": "2026-11-20",
+    "end_date": "2027-11-19",
+    "value_cap": 5000000,
+    "consumed_value": 0,
+    "source": "pdf",
+    "lines": [
+      { "item_code": "ITM-1056", "rate": 64654.36 },
+      { "item_code": "ITM-1057", "rate": 10689.51 }
+    ]
+  }
+]

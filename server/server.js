@@ -12,10 +12,19 @@ import { createRequire } from 'node:module';
 import { parseContractText } from './engine/contracts.js';
 import { preferredList } from './engine/suppliers.js';
 import { preferredExport } from './engine/preferredExport.js';
+import { validatePolicy, diffPolicies } from './policy/diff.js';
+import { proposePolicy } from './policy/parse.js';
+import { processChatMessage } from './engine/chat.js';
 
 const require = createRequire(import.meta.url);
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const store = process.env.MONGODB_URI ? await mongoStore(process.env.MONGODB_URI) : memoryStore();
+let store;
+try {
+  store = process.env.MONGODB_URI ? await mongoStore(process.env.MONGODB_URI) : memoryStore();
+} catch (err) {
+  console.warn('MongoDB connection failed, falling back to memory store:', err.message);
+  store = memoryStore();
+}
 const upload = multer({ storage: multer.memoryStorage(), limits: { fileSize: 25 * 1024 * 1024 } });
 
 const app = express();
@@ -37,6 +46,53 @@ if (!(await store.count('policies'))) {
   await store.insert('policies', { ...seedPolicy, status: 'active', approved_by: 'system', approved_at: new Date().toISOString() });
 }
 
+async function autoSeed() {
+  if (await store.count('items')) return;
+  const dataDir = path.resolve(__dirname, '../data');
+  if (!fs.existsSync(dataDir)) return;
+  const itemFile = path.join(dataDir, 'item_master.csv');
+  const supplierFile = path.join(dataDir, 'supplier_master.csv');
+  const plantFile = path.join(dataDir, 'plants.csv');
+  const poFile = path.join(dataDir, 'po_history.csv');
+  const regFile = path.join(dataDir, 'contract_register.csv');
+  const lineFile = path.join(dataDir, 'contract_lines.csv');
+  const pdfOnlyFile = path.join(dataDir, 'contracts_pdf_only.json');
+
+  if (fs.existsSync(itemFile)) {
+    const rows = parseCsvText(fs.readFileSync(itemFile, 'utf8')).map((r) => ({ ...r, standard_price: Number(r.standard_price) }));
+    await store.replace('items', rows);
+  }
+  if (fs.existsSync(supplierFile)) {
+    const rows = parseCsvText(fs.readFileSync(supplierFile, 'utf8')).map((r) => ({
+      ...r,
+      on_time_pct: Number(r.on_time_pct),
+      quality_rating: Number(r.quality_rating),
+    }));
+    await store.replace('suppliers', rows);
+  }
+  if (fs.existsSync(plantFile)) {
+    await store.replace('plants', parseCsvText(fs.readFileSync(plantFile, 'utf8')));
+  }
+  if (fs.existsSync(poFile)) {
+    const rows = parseCsvText(fs.readFileSync(poFile, 'utf8')).map((r) => ({
+      ...r,
+      quantity: Number(r.quantity),
+      unit_price: Number(r.unit_price),
+    }));
+    await store.replace('poHistory', rows);
+  }
+  if (fs.existsSync(regFile) && fs.existsSync(lineFile)) {
+    const pdfOnly = fs.existsSync(pdfOnlyFile) ? JSON.parse(fs.readFileSync(pdfOnlyFile, 'utf8')) : [];
+    const joined = joinContracts(
+      parseCsvText(fs.readFileSync(regFile, 'utf8')),
+      parseCsvText(fs.readFileSync(lineFile, 'utf8')),
+      pdfOnly
+    );
+    await store.replace('contracts', joined);
+  }
+}
+await autoSeed();
+
 let cache = null;
 const invalidate = () => {
   cache = null;
@@ -53,7 +109,9 @@ async function getMaster() {
 
 async function getPolicies() {
   const all = await store.all('policies');
-  return all.filter((p) => p.status === 'active').sort((a, b) => a.effective_from.localeCompare(b.effective_from));
+  return all
+    .filter((p) => p.status === 'active')
+    .sort((a, b) => a.effective_from.localeCompare(b.effective_from) || String(a.approved_at).localeCompare(String(b.approved_at)));
 }
 
 const fileText = (f) => f.buffer.toString('utf8');
@@ -342,5 +400,155 @@ app.get(
     res.json(all.sort((a, b) => b.at.localeCompare(a.at)).slice(0, 300));
   })
 );
+
+app.get(
+  '/api/policies',
+  wrap(async (req, res) => {
+    const all = await store.all('policies');
+    res.json(all.sort((a, b) => b.effective_from.localeCompare(a.effective_from)));
+  })
+);
+
+app.post(
+  '/api/policies/diff',
+  wrap(async (req, res) => {
+    const { policy } = req.body || {};
+    const errors = validatePolicy(policy);
+    const base = policyAsOf(await getPolicies(), errors.length ? '9999-12-31' : policy.effective_from);
+    res.json({ errors, base_version: base.version, changes: errors.length ? [] : diffPolicies(base, policy) });
+  })
+);
+
+app.post(
+  '/api/policies/propose',
+  upload.single('file'),
+  wrap(async (req, res) => {
+    let text = req.body?.text || '';
+    if (req.file) {
+      const isPdf = req.file.originalname.toLowerCase().endsWith('.pdf');
+      const pdf = require('pdf-parse/lib/pdf-parse.js');
+      text += '\n' + (isPdf ? (await pdf(req.file.buffer)).text : fileText(req.file));
+    }
+    if (!text.trim()) throw fail(400, 'Give a policy document (PDF or text) or describe the change.');
+
+    const policies = await getPolicies();
+    const hint = req.body?.effective_from;
+    const base = policyAsOf(policies, hint || '9999-12-31');
+    const { proposed, errors } = await proposePolicy(base, text, hint);
+    if (hint) proposed.effective_from = hint;
+    const finalErrors = hint ? validatePolicy(proposed) : errors;
+    res.json({ proposed, errors: finalErrors, base_version: base.version, changes: finalErrors.length ? [] : diffPolicies(base, proposed) });
+  })
+);
+
+app.post(
+  '/api/policies/approve',
+  wrap(async (req, res) => {
+    const { policy, approved_by } = req.body || {};
+    const errors = validatePolicy(policy);
+    if (errors.length) throw fail(400, 'Policy is invalid: ' + errors.join('; '));
+    const all = await store.all('policies');
+    if (all.some((p) => p.status === 'active' && p.version === policy.version)) throw fail(400, `Version ${policy.version} already exists. Use a new version number.`);
+
+    const { id, status, approved_by: _by, approved_at: _at, ...clean } = policy;
+    const saved = await store.insert('policies', {
+      ...clean,
+      status: 'active',
+      approved_by: approved_by || 'procurement',
+      approved_at: new Date().toISOString(),
+    });
+    await audit('policy_approved', approved_by, { version: clean.version, effective_from: clean.effective_from });
+    res.json(saved);
+  })
+);
+app.post(
+  '/api/policies/:version/retire',
+  wrap(async (req, res) => {
+    const all = await store.all('policies');
+    const target = all.find((p) => p.version === req.params.version && p.status === 'active');
+    if (!target) throw fail(404, `No active policy version ${req.params.version}.`);
+    if (all.filter((p) => p.status === 'active').length <= 1) throw fail(400, 'You cannot retire the only active policy version.');
+    const by = req.body?.user || 'buyer';
+    await store.update('policies', target.id, { status: 'retired', retired_by: by, retired_at: new Date().toISOString() });
+    await audit('policy_retired', by, { version: target.version, effective_from: target.effective_from });
+    res.json({ retired: target.version, effective_from: target.effective_from });
+  })
+);
+
+
+app.post(
+  '/api/chat',
+  wrap(async (req, res) => {
+    const { message, history, draft } = req.body || {};
+    if (!message || !message.trim()) throw fail(400, 'Message cannot be empty.');
+    const master = await getMaster();
+    const policies = await getPolicies();
+    const result = await processChatMessage({ message, history, draft, master, policies });
+
+    // If PR was created, also store it in a batch for the buyer workspace!
+    if (result.status === 'created' && result.pr && result.decision) {
+      const activeBatches = await store.all('batches');
+      let chatBatch = activeBatches.find((b) => b.label === 'Chat Requisitions');
+      if (!chatBatch) {
+        chatBatch = await store.insert('batches', {
+          created_at: new Date().toISOString(),
+          label: 'Chat Requisitions',
+          policy_versions: [result.decision.policy_version],
+          rows: [result.decision],
+          requirements: [
+            {
+              group_id: result.decision.group_id,
+              decision: result.decision.decision,
+              route: result.decision.route,
+              supplier_id: result.decision.supplier_id,
+              unit_price: result.decision.unit_price,
+              group_value_inr: result.decision.group_value_inr,
+              policy_version: result.decision.policy_version,
+              reason: result.decision.reason,
+              po_id: result.decision.po_id,
+              status: 'pending',
+              lines: [result.pr],
+            },
+          ],
+          pos: result.decision.po_id ? [{ id: result.decision.po_id, supplier: result.decision.supplier_id }] : [],
+        });
+      } else {
+        chatBatch.rows.unshift(result.decision);
+        chatBatch.requirements.unshift({
+          group_id: result.decision.group_id,
+          decision: result.decision.decision,
+          route: result.decision.route,
+          supplier_id: result.decision.supplier_id,
+          unit_price: result.decision.unit_price,
+          group_value_inr: result.decision.group_value_inr,
+          policy_version: result.decision.policy_version,
+          reason: result.decision.reason,
+          po_id: result.decision.po_id,
+          status: 'pending',
+          lines: [result.pr],
+        });
+        await store.update('batches', chatBatch.id, {
+          rows: chatBatch.rows,
+          requirements: chatBatch.requirements,
+        });
+      }
+      await audit('chat_pr_created', 'chat_user', { pr_no: result.decision.pr_no, route: result.decision.route });
+    }
+
+    res.json(result);
+  })
+);
+
+const clientDist = path.resolve(__dirname, '../client/dist');
+if (fs.existsSync(clientDist)) {
+  app.use(express.static(clientDist));
+  app.use((req, res, next) => {
+    if (req.method === 'GET' && !req.path.startsWith('/api/')) {
+      return res.sendFile(path.join(clientDist, 'index.html'));
+    }
+    next();
+  });
+}
+
 const port = process.env.PORT || 4000;
 app.listen(port, () => console.log(`API on :${port} (storage: ${store.kind})`));

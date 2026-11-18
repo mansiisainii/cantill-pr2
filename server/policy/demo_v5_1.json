@@ -1,0 +1,183 @@
+{
+  "policy": {
+    "version": "5.1",
+    "title": "Corvo Procurement Policy v5.1 (demo amendment)",
+    "effective_from": "2026-11-01",
+    "params": {
+      "club_days": 14,
+      "club_needby_days": 7,
+      "history_days": 365,
+      "preferred_days": 548,
+      "consolidation_hours": 24,
+      "allowed_supplier_status": [
+        "Active"
+      ],
+      "ranking": {
+        "freq": 0.35,
+        "recency": 0.25,
+        "contract": 0.1,
+        "ontime": 0.15,
+        "quality": 0.15,
+        "freq_cap": 10,
+        "recent_days": 90,
+        "mid_days": 365
+      }
+    },
+    "rules": [
+      {
+        "id": "1.2",
+        "text": "New item (not in item master): always sourcing, no suggestions",
+        "when": [
+          {
+            "field": "is_new_item",
+            "op": "eq",
+            "value": true
+          }
+        ],
+        "then": {
+          "decision": "SOURCING_REQUEST",
+          "route": "NEW_ITEM_SOURCING",
+          "suggest": 0
+        }
+      },
+      {
+        "id": "5.1",
+        "text": "Capex item: sourcing request with 5 suggested suppliers",
+        "when": [
+          {
+            "field": "item_type",
+            "op": "eq",
+            "value": "Capex"
+          }
+        ],
+        "then": {
+          "decision": "SOURCING_REQUEST",
+          "route": "CAPEX_SOURCING",
+          "suggest": 5
+        }
+      },
+      {
+        "id": "5.2",
+        "text": "A contract can be used: PO to contract supplier at contract rate",
+        "when": [
+          {
+            "field": "contract_usable",
+            "op": "eq",
+            "value": true
+          }
+        ],
+        "then": {
+          "decision": "PO",
+          "route": "CONTRACT_PO",
+          "supplier": "contract"
+        }
+      },
+      {
+        "id": "X.1",
+        "text": "Chakan plant: Electrical Spares always go to RFQ",
+        "when": [
+          {
+            "field": "plant",
+            "op": "eq",
+            "value": "CHK1"
+          },
+          {
+            "field": "category",
+            "op": "eq",
+            "value": "Electrical Spares"
+          }
+        ],
+        "then": {
+          "decision": "SOURCING_REQUEST",
+          "route": "RFQ",
+          "suggest": 3
+        }
+      },
+      {
+        "id": "5.3",
+        "text": "Emergency, value up to 5,00,000, bought from an Active supplier in last 365 days",
+        "when": [
+          {
+            "field": "urgency",
+            "op": "eq",
+            "value": "Emergency"
+          },
+          {
+            "field": "value",
+            "op": "lte",
+            "value": 500000
+          },
+          {
+            "field": "bought_recently",
+            "op": "eq",
+            "value": true
+          }
+        ],
+        "then": {
+          "decision": "PO",
+          "route": "EMERGENCY_PO",
+          "supplier": "preferred_1"
+        }
+      },
+      {
+        "id": "5.4",
+        "text": "Value below 3,00,000 and bought from an Active supplier in last 365 days",
+        "when": [
+          {
+            "field": "value",
+            "op": "lt",
+            "value": 300000
+          },
+          {
+            "field": "bought_recently",
+            "op": "eq",
+            "value": true
+          }
+        ],
+        "then": {
+          "decision": "PO",
+          "route": "SPOT_PO",
+          "supplier": "preferred_1"
+        }
+      },
+      {
+        "id": "5.5",
+        "text": "Value below 10,00,000: RFQ with 3 suggested suppliers",
+        "when": [
+          {
+            "field": "value",
+            "op": "lt",
+            "value": 1000000
+          }
+        ],
+        "then": {
+          "decision": "SOURCING_REQUEST",
+          "route": "RFQ",
+          "suggest": 3
+        }
+      },
+      {
+        "id": "5.6",
+        "text": "Value 10,00,000 or more: RFP with 5 suggested suppliers",
+        "when": [
+          {
+            "field": "value",
+            "op": "gte",
+            "value": 1000000
+          }
+        ],
+        "then": {
+          "decision": "SOURCING_REQUEST",
+          "route": "RFP",
+          "suggest": 5
+        }
+      }
+    ],
+    "default": {
+      "decision": "SOURCING_REQUEST",
+      "route": "RFQ",
+      "suggest": 3
+    }
+  },
+  "approved_by": "Head of Procurement"
+}

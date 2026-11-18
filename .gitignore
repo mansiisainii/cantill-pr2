@@ -1,6 +1,17 @@
+# Dependencies
 node_modules/
 dist/
+
+# Environment and secrets
 .env
-# Task data repo mein commit nahi karna
-data/
-*.pdf
+.env.local
+
+# Temporary / test runs
+run*.csv
+out_*.csv
+server/run*.csv
+server/out_*.csv
+
+# Reference task kit files (keep out of main code repository)
+/*.pdf
+README.txt
