@@ -154,3 +154,32 @@ When routing to `RFQ` (requires 3 suggestions) or `RFP` / `CAPEX_SOURCING` (requ
   - `route = 'NOT_PROCESSED'`
   - `reason = 'Invalid quantity or missing mandatory plant/date attributes'`
   - Full audit trail maintained for compliance.
+
+
+---
+
+## 9. Policy Amendment No. 1 (v5.1, Effective 1 December 2026)
+
+During the blind test, Procurement Policy Amendment No. 1 was received and evaluated:
+
+### 9.1 Packaging Spot Limit (Clause A1)
+- **Interpretation**: Rule 5.4 spot limit is reduced from ₹2,00,000 to ₹1,00,000 strictly for items in the `Packaging` category. Packaging requirements $\ge ₹1,00,000$ must be sourced.
+- **Implementation**: Deployed as split rules:
+  - `Rule 5.4a`: `category == 'Packaging'` AND `value < 100,000` AND `bought_recently == true` $\to$ `SPOT_PO`.
+  - `Rule 5.4b`: `category != 'Packaging'` AND `value < 200,000` AND `bought_recently == true` $\to$ `SPOT_PO`.
+  - Packaging requirements between ₹1,00,000 and ₹8,00,000 now route to `RFQ` (e.g. `PR-26-00603` to `PR-26-00610`).
+
+### 9.2 RFP Threshold Reduction (Clause A2)
+- **Interpretation**: The monetary boundary separating `RFQ` (Rule 5.5) and formal `RFP` (Rule 5.6) is reduced from ₹10,00,000 to ₹8,00,000.
+- **Implementation**:
+  - `Rule 5.5`: `value < 800,000` $\to$ `RFQ` (suggest 3 suppliers).
+  - `Rule 5.6`: `value >= 800,000` $\to$ `RFP` (suggest 5 suppliers).
+  - Lines between ₹8,00,000 and ₹10,00,000 (e.g. `PR-26-00621`, `PR-26-00622`, `PR-26-00623`, `PR-26-00625`) now appropriately mandate formal `RFP` sourcing.
+
+### 9.3 Chakan Electrical Safety (Clause A3 - Rule 5.2A)
+- **Interpretation**: At the Chakan plant (`CHK1`), any requirement in the `Electrical Spares` category valued at ₹50,000 or more must be sourced via `RFQ` (or `RFP` if $\ge ₹8,00,000$), even if emergency or spot PO criteria would otherwise apply. A contract PO (Rule 5.2) remains permitted.
+- **Implementation**: Positioned immediately following Rule 5.2:
+  - `Rule 5.2`: Contract PO takes precedence if an active contract with available ceiling covers the item.
+  - `Rule 5.2A.1`: `plant == 'CHK1'` AND `category == 'Electrical Spares'` AND `value >= 800,000` $\to$ `RFP` (suggest 5).
+  - `Rule 5.2A`: `plant == 'CHK1'` AND `category == 'Electrical Spares'` AND `value >= 50,000` $\to$ `RFQ` (suggest 3).
+  - Requirements below ₹50,000 at CHK1 remain eligible for spot PO or emergency PO under standard rules.
