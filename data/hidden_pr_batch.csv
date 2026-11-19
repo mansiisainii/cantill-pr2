@@ -1,0 +1,191 @@
+pr_no,pr_line,created_at,requester,department,plant,item_code,description,quantity,uom,estimated_unit_price,need_by_date,urgency
+PR-26-00501,1,2026-11-29 18:40,K. Jadhav,Maintenance,CHK1,ITM-1009,Hex bolt M10x40 GR 8.8,16080,NOS,8.99,2026-12-07,Normal
+PR-26-00502,1,2026-12-09 11:40,N. Iyer,Admin,PUN1,ITM-1021,Ball bearing 6205-2RS,370,NOS,241.89,2026-12-26,Normal
+PR-26-00503,1,2026-12-08 12:00,S. Patil,Maintenance,CHK1,ITM-1052,Cutting oil soluble 210L,3,BRL,32716.9,2026-12-20,Normal
+PR-26-00504,1,2026-12-04 10:15,M. Shaikh,Admin,PUN1,ITM-1024,V-belt B-54,40,NOS,307.12,2027-01-02,Normal
+PR-26-00505,1,2026-12-03 15:15,M. Shaikh,Tool Room,CHK1,ITM-1007,MS flat 50x6,3790,KG,68.83,2026-12-21,Normal
+PR-26-00506,1,2026-11-28 11:50,S. Patil,Production,CHK1,ITM-1049,Safety helmet ISI,760,NOS,207.85,2026-12-16,Normal
+PR-26-00507,1,2026-12-11 13:05,R. Deshmukh,Stores,CHK1,ITM-1001,MS sheet 2mm 1250x2500,5,NOS,7151.92,2026-12-27,Normal
+PR-26-00508,1,2026-12-10 10:50,A. Kulkarni,Maintenance,PUN1,,cotton hand gloves,10620,PAIR,33.75,2026-12-31,Normal
+PR-26-00509,1,2026-11-28 18:00,S. Patil,Admin,CHK1,ITM-1019,Grinding wheel 4 inch,370,NOS,45.2,2026-12-06,Normal
+PR-26-00510,1,2026-11-25 11:40,P. Joshi,Tool Room,CHK1,ITM-1002,MS sheet 3mm 1250x2500,12,NOS,11087.72,2026-12-16,Normal
+PR-26-00511,1,2026-12-08 17:10,K. Jadhav,IT,PUN1,ITM-1048,Nitrile coated gloves,830,PAIR,113.05,2026-12-17,Normal
+PR-26-00512,1,2026-11-24 18:30,N. Iyer,Tool Room,CHK1,ITM-1015,Welding electrode E6013 3.15mm,1030,KG,167.84,2026-12-17,Normal
+PR-26-00513,1,2026-12-02 10:15,K. Jadhav,Admin,CHK1,,Hex nut M10 GR 8,135260,NOS,,2026-12-15,Normal
+PR-26-00514,1,2026-11-26 17:20,N. Iyer,IT,CHK1,ITM-1023,Taper roller bearing 32210,130,NOS,1517.66,2026-12-10,Normal
+PR-26-00515,1,2026-12-08 13:30,M. Shaikh,Production,PUN1,ITM-1022,Ball bearing 6308-ZZ,40,NOS,685.38,2026-12-22,Normal
+PR-26-00516,1,2026-11-29 12:15,K. Jadhav,Maintenance,PUN1,ITM-1053,Grease EP2 18kg,50,BKT,3895.5,2026-12-11,Normal
+PR-26-00517,1,2026-11-27 14:00,N. Iyer,Stores,PUN1,,housekeeping service for month,2,MON,172188.83,2026-12-04,Normal
+PR-26-00518,1,2026-11-28 11:20,N. Iyer,Quality,CHK1,ITM-1006,Aluminium plate 6061 10mm,780,KG,372.52,2026-12-26,Normal
+PR-26-00519,1,2026-12-02 11:00,K. Jadhav,Quality,PUN1,ITM-1041,Corrugated box 5 ply 600x400x400,3550,NOS,,2026-12-29,Normal
+PR-26-00520,1,2026-11-25 16:15,V. Pawar,IT,CHK1,ITM-1016,MIG wire ER70S-6 1.2mm,1300,KG,146.44,2026-12-12,Normal
+PR-26-00521,1,2026-12-04 14:40,M. Shaikh,Maintenance,PUN1,ITM-1046,Safety shoes steel toe,210,PAIR,1335.05,2026-12-29,Normal
+PR-26-00522,1,2026-11-30 18:10,M. Shaikh,Admin,CHK1,,Anchor fastener M12x100,1910,NOS,,2026-12-29,Normal
+PR-26-00523,1,2026-11-24 13:40,M. Shaikh,Stores,PUN1,ITM-1003,EN8 round bar 40mm,3190,KG,80.97,2026-12-11,Normal
+PR-26-00524,1,2026-11-30 08:15,M. Shaikh,IT,CHK1,ITM-1014,Hex bolt M16x60 GR 10.9,11220,NOS,,2026-12-17,Normal
+PR-26-00525,1,2026-11-23 16:10,M. Shaikh,Admin,CHK1,,brg 6308-ZZ,110,NOS,709.82,2026-11-30,Normal
+PR-26-00526,1,2026-12-11 11:30,K. Jadhav,Maintenance,CHK1,ITM-1023,Taper roller bearing 32210,50,NOS,1782.44,2027-01-02,Normal
+PR-26-00527,1,2026-11-27 14:20,V. Pawar,Tool Room,PUN1,ITM-1023,Taper roller bearing 32210,70,NOS,1740.64,2026-12-08,Normal
+PR-26-00528,1,2026-12-04 10:10,S. Patil,Maintenance,CHK1,ITM-1022,Ball bearing 6308-ZZ,120,NOS,788.69,2026-12-18,Normal
+PR-26-00529,1,2026-12-05 12:40,S. Patil,Admin,CHK1,ITM-1022,Ball bearing 6308-ZZ,220,NOS,609.22,2026-12-28,Normal
+PR-26-00530,1,2026-12-06 11:40,R. Deshmukh,Maintenance,CHK1,,brg 6308-zz,70,NOS,,2026-12-20,Normal
+PR-26-00531,1,2026-12-02 10:30,P. Joshi,IT,PUN1,,hex bolt m10x40 gr 8.8,2780,NOS,8.15,2026-12-09,Normal
+PR-26-00532,1,2026-11-27 09:45,A. Kulkarni,Admin,CHK1,ITM-1009,Hex bolt M10x40 GR 8.8,3740,NOS,6.68,2026-12-21,Normal
+PR-26-00533,1,2026-11-24 13:00,N. Iyer,IT,PUN1,,hex bolt m10x40 gr 8.8,3130,NOS,,2026-12-01,Normal
+PR-26-00534,1,2026-11-26 10:20,K. Jadhav,Admin,CHK1,ITM-1009,Hex bolt M10x40 GR 8.8,2490,NOS,6.53,2026-12-08,Normal
+PR-26-00535,1,2026-12-06 08:30,N. Iyer,Quality,PUN1,ITM-1009,Hex bolt M10x40 GR 8.8,2610,NOS,8.91,2027-01-04,Normal
+PR-26-00536,1,2026-11-24 08:15,M. Shaikh,Tool Room,CHK1,ITM-1057,24 inch monitor,30,NOS,12004.64,2026-12-12,Normal
+PR-26-00537,1,2026-11-28 17:45,R. Deshmukh,IT,CHK1,ITM-1036,Pneumatic cylinder 50x100,20,NOS,3673.3,2026-12-18,Normal
+PR-26-00538,1,2026-11-24 12:45,K. Jadhav,Tool Room,PUN1,ITM-1039,FRL unit 1/2 inch,60,NOS,,2026-12-22,Normal
+PR-26-00539,1,2026-12-05 08:05,N. Iyer,IT,PUN1,ITM-1056,Laptop i5 16GB 512GB,3,NOS,83079.1,2026-12-31,Normal
+PR-26-00540,1,2026-11-28 15:05,N. Iyer,Maintenance,PUN1,ITM-1037,Solenoid valve 5/2 1/4 inch,80,NOS,2857.59,2026-12-25,Normal
+PR-26-00541,1,2026-11-30 12:15,V. Pawar,Production,CHK1,ITM-1056,Laptop i5 16GB 512GB,2,NOS,75588.51,2026-12-15,Normal
+PR-26-00542,1,2026-12-05 09:40,M. Shaikh,Tool Room,CHK1,ITM-1057,24 inch monitor,8,NOS,12583.98,2026-12-23,Normal
+PR-26-00543,1,2026-12-03 12:10,M. Shaikh,Production,CHK1,ITM-1036,Pneumatic cylinder 50x100,17,NOS,,2026-12-26,Normal
+PR-26-00544,1,2026-11-24 13:50,M. Shaikh,IT,CHK1,ITM-1037,Solenoid valve 5/2 1/4 inch,90,NOS,3073.69,2026-12-06,Normal
+PR-26-00545,1,2026-12-06 16:45,A. Kulkarni,Tool Room,CHK1,ITM-1039,FRL unit 1/2 inch,50,NOS,3464.59,2026-12-30,Normal
+PR-26-00546,1,2026-12-01 13:00,P. Joshi,Quality,PUN1,ITM-1073,Forklift electric 2 ton,2,NOS,1251156.66,2026-12-27,Normal
+PR-26-00547,1,2026-12-10 08:00,S. Patil,IT,PUN1,,Hydraulic press 100 ton,1,NOS,2744757.52,2026-12-20,Normal
+PR-26-00548,1,2026-11-26 11:15,K. Jadhav,Quality,PUN1,ITM-1071,EOT crane 5 ton,2,NOS,1657971.99,2026-12-23,Normal
+PR-26-00549,1,2026-11-28 08:30,N. Iyer,IT,PUN1,,forklift electric 2 ton as per sample,4,NOS,,2026-12-08,Normal
+PR-26-00550,1,2026-12-05 14:10,P. Joshi,Maintenance,CHK1,ITM-1060,Wireless keyboard mouse combo,100,NOS,1677.61,2026-12-28,Normal
+PR-26-00551,1,2026-12-04 14:05,A. Kulkarni,Tool Room,CHK1,ITM-1032,LED flood light 100W,20,NOS,2046.58,2026-12-20,Normal
+PR-26-00552,1,2026-11-23 09:15,M. Shaikh,Maintenance,CHK1,,slideway oil 220,60,LTR,,2026-12-21,Normal
+PR-26-00553,1,2026-12-08 13:40,R. Deshmukh,Stores,PUN1,ITM-1032,LED flood light 100W,30,NOS,2402.7,2026-12-28,Normal
+PR-26-00554,1,2026-12-09 13:05,V. Pawar,Quality,PUN1,ITM-1060,Wireless keyboard mouse combo,90,NOS,1336.28,2026-12-19,Normal
+PR-26-00555,1,2026-12-07 12:00,P. Joshi,IT,PUN1,ITM-1042,Wooden pallet 1200x1000,350,NOS,1104.12,2026-12-23,Emergency
+PR-26-00556,1,2026-12-11 16:10,N. Iyer,Admin,CHK1,ITM-1004,SS 304 sheet 1.5mm,15,NOS,19980.68,2026-12-25,Emergency
+PR-26-00557,1,2026-11-23 16:10,P. Joshi,Quality,PUN1,ITM-1043,Stretch film 23 micron,1960,KG,,2026-12-08,Emergency
+PR-26-00558,1,2026-11-24 13:10,V. Pawar,Production,CHK1,,Copper cable 4 core 6 sqmm,720,MTR,297.37,2026-12-15,Emergency
+PR-26-00559,1,2026-12-06 18:15,V. Pawar,Stores,CHK1,ITM-1051,Ear plugs disposable,17830,PAIR,,2026-12-25,Emergency
+PR-26-00560,1,2026-11-24 12:15,P. Joshi,Admin,PUN1,ITM-1033,Servo drive 2kW (Vertex CNC),2,NOS,79501.6,2026-12-08,Emergency
+PR-26-00561,1,2026-12-06 11:50,R. Deshmukh,Admin,CHK1,ITM-1027,Coupling spider L-100,40,NOS,260.75,2026-12-19,Normal
+PR-26-00562,1,2026-11-27 09:00,N. Iyer,Stores,CHK1,ITM-1050,Safety goggles clear,650,NOS,136.12,2026-12-23,Normal
+PR-26-00563,1,2026-11-25 16:20,R. Deshmukh,IT,CHK1,,spring washer m10,136280,NOS,0.84,2026-12-10,Normal
+PR-26-00564,1,2026-12-04 09:10,N. Iyer,IT,PUN1,ITM-1038,Hydraulic oil HLP 68,420,LTR,,2026-12-21,Normal
+PR-26-00565,1,2026-12-02 11:10,A. Kulkarni,Stores,CHK1,ITM-1058,A4 paper 75 GSM,610,REAM,,2026-12-17,Normal
+PR-26-00566,1,2026-11-30 14:05,V. Pawar,Stores,PUN1,ITM-1045,PP strapping roll,70,ROL,1498.59,2026-12-25,Normal
+PR-26-00567,1,2026-11-29 13:50,N. Iyer,Tool Room,CHK1,,Toner cartridge HP 88A,14,NOS,,2026-12-28,Normal
+PR-26-00568,1,2026-12-07 17:20,A. Kulkarni,Production,PUN1,,Gearbox oil seal 45x62x8,1580,NOS,118.32,2026-12-29,Normal
+PR-26-00569,1,2026-11-27 10:30,S. Patil,Admin,PUN1,,encoder for cnc spindle (vertex),4,NOS,,2026-12-26,Normal
+PR-26-00570,1,2026-11-27 14:30,P. Joshi,Quality,CHK1,ITM-1017,Argon gas cylinder 7 cum,62,CYL,1354.16,2026-12-10,Normal
+PR-26-00571,1,2026-12-02 18:05,R. Deshmukh,Tool Room,CHK1,ITM-1018,CO2 gas cylinder 30kg,101,CYL,,2026-12-17,Normal
+PR-26-00572,1,2026-12-05 08:10,A. Kulkarni,Maintenance,CHK1,,proximity sensor m18 pnp,13,NOS,,2027-01-02,Normal
+PR-26-00573,1,2026-11-28 17:15,S. Patil,IT,CHK1,ITM-1029,MCB 4 pole 63A,60,NOS,1598.12,2026-12-13,Normal
+PR-26-00574,1,2026-11-28 08:20,P. Joshi,Stores,CHK1,ITM-1054,Way lube oil 68,280,LTR,242.86,2026-12-06,Normal
+PR-26-00575,1,2026-12-10 12:00,A. Kulkarni,Admin,CHK1,ITM-1035,Hydraulic hose 1/2 inch 2 wire,240,MTR,477.89,2026-12-26,Normal
+PR-26-00576,1,2026-12-06 15:05,N. Iyer,IT,CHK1,,cutting wheel 14 inch,80,NOS,,2027-01-01,Normal
+PR-26-00577,1,2026-11-28 10:45,N. Iyer,IT,PUN1,ITM-1005,MS angle 50x50x5,1020,KG,85.12,2026-12-22,Normal
+PR-26-00578,1,2026-11-28 16:30,P. Joshi,IT,PUN1,ITM-1044,VCI bag 600x900,2370,NOS,26.16,2026-12-23,Normal
+PR-26-00579,1,2026-11-28 13:05,S. Patil,Stores,CHK1,,Bright bar EN1A 25mm,1550,KG,104.53,2026-12-20,Normal
+PR-26-00580,1,2026-12-02 16:30,R. Deshmukh,Quality,PUN1,ITM-1028,Contactor 3 pole 32A,90,NOS,1870.66,2026-12-15,Normal
+PR-26-00581,1,2026-12-06 09:00,A. Kulkarni,IT,CHK1,ITM-1040,Hydraulic pump seal kit (Hydrax),1,SET,,2026-12-18,Normal
+PR-26-00582,1,2026-12-08 14:15,A. Kulkarni,Maintenance,PUN1,ITM-1033,Servo drive 2kW (Vertex CNC),1,NOS,59187.43,2026-12-25,Normal
+PR-26-00583,1,2026-12-09 11:50,M. Shaikh,IT,CHK1,ITM-1054,Way lube oil 68,800,LTR,215.6,2027-01-06,Normal
+PR-26-00584,1,2026-12-11 08:45,V. Pawar,Tool Room,PUN1,ITM-1045,PP strapping roll,116,ROL,1090.76,2026-12-30,Normal
+PR-26-00585,1,2026-11-28 13:10,N. Iyer,Production,PUN1,,safety goggles clear,1300,NOS,126.97,2026-12-23,Normal
+PR-26-00586,1,2026-12-08 16:00,R. Deshmukh,Tool Room,CHK1,ITM-1020,Cutting wheel 14 inch,70,NOS,,2027-01-04,Normal
+PR-26-00587,1,2026-11-25 18:40,K. Jadhav,IT,CHK1,ITM-1038,Hydraulic oil HLP 68,90,LTR,,2026-12-07,Normal
+PR-26-00588,1,2026-11-24 14:00,M. Shaikh,Production,CHK1,ITM-1058,A4 paper 75 GSM,418,REAM,,2026-12-03,Normal
+PR-26-00589,1,2026-11-23 13:15,V. Pawar,Quality,PUN1,ITM-1066,CMM calibration service,9,JOB,66142.58,2026-12-11,Normal
+PR-26-00590,1,2026-12-07 17:50,N. Iyer,IT,PUN1,ITM-1068,Third party inspection visit,23,JOB,18476.99,2026-12-30,Normal
+PR-26-00591,1,2026-12-03 16:15,A. Kulkarni,Maintenance,CHK1,ITM-1044,VCI bag 600x900,26250,NOS,22.12,2026-12-14,Normal
+PR-26-00592,1,2026-11-25 15:00,K. Jadhav,Maintenance,PUN1,ITM-1031,Copper cable 4 core 6 sqmm,920,MTR,241.07,2026-12-17,Normal
+PR-26-00593,1,2026-11-25 13:10,M. Shaikh,Production,CHK1,,contactor 3 pole 32a,390,NOS,,2026-12-13,Normal
+PR-26-00594,1,2026-11-29 15:10,M. Shaikh,Stores,CHK1,ITM-1034,Encoder for CNC spindle (Vertex),12,NOS,50520.26,2026-12-22,Normal
+PR-26-00595,1,2026-12-02 09:15,N. Iyer,IT,PUN1,ITM-1061,Housekeeping services (monthly),3,MON,165894.5,2026-12-16,Normal
+PR-26-00596,1,2026-12-03 18:40,M. Shaikh,Stores,PUN1,ITM-1029,MCB 4 pole 63A,300,NOS,1505.75,2026-12-18,Normal
+PR-26-00597,1,2026-12-03 14:30,P. Joshi,Quality,CHK1,ITM-1030,Proximity sensor M18 PNP,190,NOS,1359.27,2026-12-14,Normal
+PR-26-00598,1,2026-11-28 13:05,A. Kulkarni,Admin,PUN1,ITM-1043,Stretch film 23 micron,2280,KG,,2026-12-25,Normal
+PR-26-00599,1,2026-12-10 15:20,R. Deshmukh,Maintenance,CHK1,ITM-1004,SS 304 sheet 1.5mm,70,NOS,22977.36,2027-01-03,Normal
+PR-26-00600,1,2026-12-10 11:05,N. Iyer,Admin,PUN1,ITM-1040,Hydraulic pump seal kit (Hydrax),128,SET,,2026-12-17,Normal
+PR-26-00601,1,2026-12-09 09:05,R. Deshmukh,Maintenance,PUN1,ITM-1059,Toner cartridge HP 88A,770,NOS,3353.32,2026-12-26,Normal
+PR-26-00602,1,2026-12-04 12:30,M. Shaikh,Stores,PUN1,ITM-1035,Hydraulic hose 1/2 inch 2 wire,3650,MTR,388.48,2026-12-22,Normal
+PR-26-00603,1,2026-12-02 12:20,R. Deshmukh,Quality,PUN1,ITM-1042,Wooden pallet 1200x1000,150,NOS,1067.36,2027-03-28,Normal
+PR-26-00604,1,2026-12-03 15:00,R. Deshmukh,Maintenance,PUN1,ITM-1042,Wooden pallet 1200x1000,150,NOS,,2027-02-04,Normal
+PR-26-00605,1,2026-12-03 10:20,R. Deshmukh,Admin,PUN1,ITM-1045,PP strapping roll,103,ROL,1391.76,2027-02-25,Normal
+PR-26-00606,1,2026-12-03 15:10,M. Shaikh,Quality,CHK1,ITM-1044,VCI bag 600x900,7030,NOS,21.85,2026-12-24,Normal
+PR-26-00607,1,2026-12-06 11:40,K. Jadhav,Stores,CHK1,ITM-1043,Stretch film 23 micron,1100,KG,164.81,2027-03-08,Normal
+PR-26-00608,1,2026-12-08 18:10,A. Kulkarni,Quality,PUN1,ITM-1045,PP strapping roll,97,ROL,1126.31,2027-01-25,Normal
+PR-26-00609,1,2026-12-10 14:50,A. Kulkarni,Admin,PUN1,ITM-1043,Stretch film 23 micron,1020,KG,190.99,2026-12-31,Normal
+PR-26-00610,1,2026-12-03 08:15,V. Pawar,IT,CHK1,ITM-1044,VCI bag 600x900,7150,NOS,23.33,2027-01-24,Normal
+PR-26-00611,1,2026-12-07 13:15,R. Deshmukh,IT,CHK1,ITM-1029,MCB 4 pole 63A,80,NOS,,2027-01-16,Normal
+PR-26-00612,1,2026-12-04 08:45,R. Deshmukh,Maintenance,CHK1,ITM-1031,Copper cable 4 core 6 sqmm,440,MTR,301.9,2027-03-07,Normal
+PR-26-00613,1,2026-12-03 15:10,M. Shaikh,Admin,CHK1,ITM-1030,Proximity sensor M18 PNP,70,NOS,,2027-03-16,Normal
+PR-26-00614,1,2026-12-06 08:40,M. Shaikh,IT,CHK1,ITM-1033,Servo drive 2kW (Vertex CNC),2,NOS,,2027-02-08,Normal
+PR-26-00615,1,2026-12-01 15:20,P. Joshi,IT,CHK1,,encoder for cnc spindle (vertex),2,NOS,,2027-03-12,Normal
+PR-26-00616,1,2026-12-02 09:10,K. Jadhav,Tool Room,CHK1,ITM-1028,Contactor 3 pole 32A,80,NOS,,2027-01-26,Normal
+PR-26-00617,1,2026-12-09 18:30,V. Pawar,Admin,CHK1,ITM-1029,MCB 4 pole 63A,100,NOS,1713.16,2026-12-29,Normal
+PR-26-00618,1,2026-12-01 11:05,A. Kulkarni,Quality,CHK1,ITM-1031,Copper cable 4 core 6 sqmm,340,MTR,260.85,2027-01-18,Normal
+PR-26-00619,1,2026-11-23 08:05,N. Iyer,Stores,PUN1,ITM-1030,Proximity sensor M18 PNP,180,NOS,1407.28,2026-12-14,Normal
+PR-26-00620,1,2026-11-26 08:20,R. Deshmukh,Tool Room,PUN1,ITM-1028,Contactor 3 pole 32A,130,NOS,,2026-12-14,Normal
+PR-26-00621,1,2026-12-06 10:30,V. Pawar,Production,CHK1,ITM-1017,Argon gas cylinder 7 cum,653,CYL,1336.89,2027-02-10,Normal
+PR-26-00622,1,2026-12-05 13:00,N. Iyer,Production,PUN1,,CO2 gas cylinder 30kg,678,CYL,,2027-03-04,Normal
+PR-26-00623,1,2026-12-06 15:15,N. Iyer,IT,CHK1,ITM-1008,Bright bar EN1A 25mm,10420,KG,91.16,2027-02-14,Normal
+PR-26-00624,1,2026-12-02 17:00,S. Patil,Quality,CHK1,ITM-1026,Gearbox oil seal 45x62x8,10000,NOS,,2027-01-27,Normal
+PR-26-00625,1,2026-12-07 14:20,P. Joshi,Production,PUN1,,ear plugs disposable,93570,PAIR,10.09,2027-01-23,Normal
+PR-26-00626,1,2026-12-05 14:10,K. Jadhav,Maintenance,CHK1,ITM-1012,Spring washer M10,56220,NOS,0.75,2026-12-20,Normal
+PR-26-00627,1,2026-12-06 12:20,S. Patil,Admin,CHK1,ITM-1012,Spring washer M10,72680,NOS,0.72,2026-12-19,Normal
+PR-26-00628,1,2026-12-04 15:40,K. Jadhav,Admin,CHK1,ITM-1012,Spring washer M10,44330,NOS,0.73,2026-12-18,Normal
+PR-26-00629,1,2026-12-09 15:15,N. Iyer,Production,CHK1,ITM-1005,MS angle 50x50x5,710,KG,80.27,2026-12-21,Normal
+PR-26-00630,1,2026-12-08 18:45,M. Shaikh,Quality,CHK1,ITM-1005,MS angle 50x50x5,800,KG,87.71,2026-12-25,Normal
+PR-26-00631,1,2026-12-04 10:45,S. Patil,Maintenance,CHK1,,MS angle 50x50x5,520,KG,87.16,2026-12-25,Normal
+PR-26-00632,1,2026-11-25 16:45,M. Shaikh,Production,PUN1,ITM-1027,Coupling spider L-100,170,NOS,,2026-12-15,Normal
+PR-26-00633,1,2026-11-25 17:30,S. Patil,Stores,PUN1,ITM-1027,Coupling spider L-100,220,NOS,240.76,2026-12-15,Normal
+PR-26-00634,1,2026-11-25 14:45,M. Shaikh,Maintenance,PUN1,ITM-1027,Coupling spider L-100,170,NOS,,2026-12-14,Normal
+PR-26-00635,1,2026-12-02 10:05,P. Joshi,Production,PUN1,,co2 gas cylinder 30kg,34,CYL,1259.38,2026-12-17,Normal
+PR-26-00636,1,2026-12-02 18:20,P. Joshi,Stores,PUN1,ITM-1018,CO2 gas cylinder 30kg,51,CYL,1543.13,2026-12-18,Normal
+PR-26-00637,1,2026-12-05 11:45,M. Shaikh,IT,PUN1,ITM-1018,CO2 gas cylinder 30kg,48,CYL,,2026-12-20,Normal
+PR-26-00638,1,2026-11-29 08:40,P. Joshi,Production,CHK1,ITM-1051,Ear plugs disposable,2790,PAIR,10.85,2026-12-15,Normal
+PR-26-00639,1,2026-11-29 17:40,K. Jadhav,Stores,CHK1,ITM-1051,Ear plugs disposable,4090,PAIR,9.88,2026-12-18,Normal
+PR-26-00640,1,2026-11-26 17:40,M. Shaikh,Stores,CHK1,ITM-1051,Ear plugs disposable,7240,PAIR,,2026-12-18,Normal
+PR-26-00641,1,2026-12-07 11:50,R. Deshmukh,Stores,PUN1,ITM-1008,Bright bar EN1A 25mm,780,KG,81.61,2026-12-19,Normal
+PR-26-00642,1,2026-12-03 13:00,S. Patil,Tool Room,PUN1,ITM-1008,Bright bar EN1A 25mm,570,KG,,2026-12-20,Normal
+PR-26-00643,1,2026-12-07 10:00,N. Iyer,Tool Room,PUN1,ITM-1008,Bright bar EN1A 25mm,310,KG,80.33,2026-12-18,Normal
+PR-26-00644,1,2026-12-07 16:50,A. Kulkarni,Quality,PUN1,,Bright bar EN1A 25mm,330,KG,99.8,2026-12-21,Normal
+PR-26-00645,1,2026-11-30 17:15,N. Iyer,Maintenance,PUN1,ITM-1059,Toner cartridge HP 88A,4,NOS,3391.41,2026-12-27,Normal
+PR-26-00646,1,2026-12-01 15:30,P. Joshi,Production,CHK1,ITM-1059,Toner cartridge HP 88A,4,NOS,3530.81,2026-12-17,Normal
+PR-26-00647,1,2026-12-02 11:15,K. Jadhav,Production,PUN1,ITM-1059,Toner cartridge HP 88A,5,NOS,3411.31,2027-01-14,Normal
+PR-26-00648,1,2026-11-25 09:10,A. Kulkarni,Tool Room,PUN1,ITM-1050,Safety goggles clear,140,NOS,,2026-12-15,Normal
+PR-26-00649,1,2026-11-26 08:40,K. Jadhav,Stores,CHK1,,Safety goggles clear,120,NOS,105.36,2026-12-08,Normal
+PR-26-00650,1,2026-11-27 18:30,A. Kulkarni,Admin,PUN1,ITM-1050,Safety goggles clear,80,NOS,132.02,2027-01-09,Normal
+PR-26-00651,1,2026-11-29 18:00,P. Joshi,Quality,PUN1,ITM-1004,SS 304 sheet 1.5mm,1,NOS,26040.71,2026-12-21,Normal
+PR-26-00652,1,2026-11-30 14:45,R. Deshmukh,Stores,CHK1,ITM-1004,SS 304 sheet 1.5mm,1,NOS,,2026-12-21,Normal
+PR-26-00653,1,2026-12-01 13:40,V. Pawar,IT,PUN1,,ss 304 sheet 1.5mm,1,NOS,,2027-01-13,Normal
+PR-26-00654,1,2026-12-03 12:28,A. Kulkarni,Tool Room,PUN1,ITM-1046,Safety shoes steel toe,20,PAIR,1059.14,2027-01-01,Normal
+PR-26-00655,1,2026-12-03 15:22,A. Kulkarni,Production,PUN1,ITM-1047,Cotton hand gloves,880,PAIR,31.35,2027-01-01,Normal
+PR-26-00656,1,2026-12-04 08:19,N. Iyer,Tool Room,PUN1,,nitrile gloves (repeat),160,PAIR,,2026-12-26,Normal
+PR-26-00657,1,2026-12-04 14:50,N. Iyer,Production,PUN1,,Safety helmet ISI,90,NOS,207.4,2027-01-01,Normal
+PR-26-00658,1,2026-11-23 09:57,K. Jadhav,IT,CHK1,ITM-1009,Hex bolt M10x40 GR 8.8,2330,NOS,8.96,2026-12-14,Normal
+PR-26-00659,1,2026-11-23 13:05,M. Shaikh,Production,CHK1,ITM-1010,Hex nut M10 GR 8,17730,NOS,,2026-12-21,Normal
+PR-26-00660,1,2026-11-24 06:01,S. Patil,Quality,CHK1,,allen cap screw m8x25,5710,NOS,6.11,2026-12-02,Normal
+PR-26-00661,1,2026-11-24 12:40,N. Iyer,Admin,CHK1,ITM-1013,Anchor fastener M12x100,990,NOS,33.01,2026-12-14,Normal
+PR-26-00662,1,2026-12-11 09:50,M. Shaikh,Tool Room,PUN1,ITM-1060,Wireless keyboard mouse combo,30,NOS,1564.33,2026-12-19,Normal
+PR-26-00662,2,2026-12-11 09:50,V. Pawar,Quality,CHK1,ITM-1065,Calibration of vernier & micrometers,9,JOB,10610.05,2026-12-29,Normal
+PR-26-00662,3,2026-12-11 09:50,S. Patil,IT,PUN1,ITM-1062,Security guard services (monthly),1,MON,233284.14,2026-12-21,Normal
+PR-26-00663,1,2026-11-30 16:00,P. Joshi,Maintenance,CHK1,ITM-1073,Forklift electric 2 ton,1,NOS,,2026-12-24,Normal
+PR-26-00663,2,2026-11-30 16:00,N. Iyer,IT,CHK1,,Material testing - tensile test,58,JOB,3883.29,2026-12-27,Normal
+PR-26-00663,3,2026-11-30 16:00,R. Deshmukh,Stores,PUN1,,Pest control (quarterly),4,QTR,,2026-12-13,Normal
+PR-26-00664,1,2026-12-01 16:20,M. Shaikh,Stores,PUN1,ITM-1071,EOT crane 5 ton,1,NOS,,2026-12-27,Normal
+PR-26-00664,2,2026-12-01 16:20,P. Joshi,Quality,PUN1,ITM-1070,Air compressor 30HP screw,1,NOS,794764.02,2026-12-28,Normal
+PR-26-00665,1,2026-12-10 13:10,N. Iyer,Quality,PUN1,ITM-1064,Canteen services (monthly),1,MON,328762.34,2026-12-24,Normal
+PR-26-00665,2,2026-12-10 13:10,P. Joshi,Stores,PUN1,ITM-1055,Slideway oil 220,950,LTR,,2026-12-23,Normal
+PR-26-00665,3,2026-12-10 13:10,S. Patil,Stores,PUN1,ITM-1069,CNC turning centre 8 inch chuck,1,NOS,,2026-12-30,Normal
+PR-26-00666,1,2026-12-05 10:00,A. Kulkarni,Stores,PUN1,ITM-1032,LED flood light 100W,80,NOS,,2026-12-29,Normal
+PR-26-00666,2,2026-12-05 10:00,N. Iyer,Quality,PUN1,ITM-1025,Chain sprocket 08B 20T,220,NOS,904.17,2026-12-20,Normal
+PR-26-00666,3,2026-12-05 10:00,P. Joshi,Stores,CHK1,ITM-1072,Hydraulic press 100 ton,1,NOS,,2026-12-31,Normal
+PR-26-00666,4,2026-12-05 10:00,R. Deshmukh,Quality,CHK1,ITM-1011,Allen cap screw M8x25,32880,NOS,6.75,2026-12-29,Normal
+PR-26-00667,1,2026-11-24 18:00,A. Kulkarni,Admin,PUN1,ITM-1066,CMM calibration service,3,JOB,76387.27,2026-12-10,Normal
+PR-26-00667,2,2026-11-24 18:00,P. Joshi,Maintenance,PUN1,ITM-1001,MS sheet 2mm 1250x2500,40,NOS,6565.72,2026-12-23,Normal
+PR-26-00667,3,2026-11-24 18:00,S. Patil,IT,PUN1,ITM-1002,MS sheet 3mm 1250x2500,19,NOS,9990.73,2026-12-08,Normal
+PR-26-00667,4,2026-11-24 18:00,N. Iyer,IT,PUN1,ITM-1065,Calibration of vernier & micrometers,18,JOB,8417.33,2026-12-11,Normal
+PR-26-00668,1,2026-11-28 16:00,K. Jadhav,Maintenance,CHK1,,Ultrasonic thickness gauge,4,NOS,37400.0,2026-12-21,Normal
+PR-26-00669,1,2026-11-30 17:20,V. Pawar,Tool Room,CHK1,,Drinking water purifier 50 LPH,2,NOS,72700.0,2026-12-28,Normal
+PR-26-00670,1,2026-11-29 13:50,S. Patil,Tool Room,CHK1,,Thermal imaging camera for maintenance,1,NOS,37000.0,2026-12-20,Normal
+PR-26-00671,1,2026-11-29 11:30,S. Patil,Admin,PUN1,ITM-1042,Wooden pallet 1200x1000,40,NOS,,2026-12-12,Normal
+PR-26-00672,1,2026-12-01 10:15,M. Shaikh,Stores,PUN1,ITM-1042,Wooden pallet 1200x1000,40,NOS,,2026-12-12,Normal
+PR-26-00673,1,2026-12-02 15:00,R. Deshmukh,Quality,PUN1,ITM-1042,Wooden pallet 1200x1000,40,NOS,,2026-12-14,Normal
+PR-26-00674,1,2026-11-27 11:15,P. Joshi,Production,CHK1,ITM-1034,Encoder for CNC spindle (Vertex),0,NOS,42189.36,2026-12-05,Normal
+PR-26-00675,1,2026-11-24 18:50,S. Patil,IT,PUN2,ITM-1034,Encoder for CNC spindle (Vertex),1,NOS,,2026-12-02,Normal
+PR-26-00676,1,2026-12-05 15:15,S. Patil,Production,CHK1,ITM-1029,MCB 4 pole 63A,40,NOS,,2026-12-19,Normal
+PR-26-00677,1,2026-12-05 15:19,S. Patil,Quality,CHK1,ITM-1029,MCB 4 pole 63A,40,NOS,1793.34,2026-12-19,Normal
